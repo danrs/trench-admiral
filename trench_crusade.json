@@ -1,0 +1,432 @@
+{
+	"config": {
+		"trackHighestDivision": true
+	},
+	"appVersion": 2,
+	"credit": [
+	],
+	"game": "Trench Crusade",
+	"stats": [
+		{
+			"name": "Movement",
+			"abbreviation": "M"
+		},
+		{
+			"name": "Ranged",
+			"abbreviation": "R",
+            "trail": " dice"
+		},
+		{
+			"name": "Melee",
+			"abbreviation": "M",
+            "trail": " dice"
+		},
+        {
+            "name": "Armour",
+            "abbreviation": "A"
+        },
+        {
+            "name": "Base",
+            "abbreviation": "B"
+        }
+	],
+	"disallowAdditionalFactions": true,
+	"dataTableKeys": [
+		"heroes"
+	],
+	"limits": [
+
+	],
+	"counts": [
+	],
+    "calculations": [
+        {
+            "label": "Glory Points",
+            "properties": ["glorypoints"]
+        }
+    ],
+	"leaderConfig": {
+		"elementPropertyName": "heroes",
+		"usesProperty": "heroicTier"
+	},
+	"additionalPrint": [
+		{
+			"propertyName": "wargear",
+			"label": "Wargear",
+			"dataSource": "gear"
+		},
+		{
+			"propertyName": "Skills",
+			"label": "Skills"
+		},
+		{
+			"propertyName": "specialRules",
+			"label": "Special Rules",
+			"dataSource": "keywords"
+		},
+
+		{
+			"propertyName": "Injuries",
+			"label": "Injuries",
+			"dataSource": "injuries"
+		},
+		{
+			"propertyName": "Stat Increase",
+			"label": "Advances",
+			"dataSource": "statincrease"
+		}
+
+
+	],
+	"elements": [
+		{
+			"propertyName": "factions",
+			"label": "Faction",
+			"type": "faction",
+			"dataSource": "factions",
+			"removeWhenNotPrimary": [
+				"armyBonus"
+			],
+			"divisionProperty": "alignment",
+			"divisions": [
+				"Warbands"
+			],
+			"children": [
+				{
+					"propertyName": "heroes",
+					"dataSource": "heroes",
+					"label": "Hero",
+					"type": "main",
+					"tierProperty": "heroicTier",
+					"tierData": "heroicTiers",
+					"tiers": [
+						
+					],
+					"children": [
+						{
+							"propertyName": "keywords",
+							"label": "Keywords",
+							"type": "static"
+						},
+						{
+							"propertyName": "abilities",
+							"label": "Abilities",
+							"type": "static",
+							"dataSource": "abilities",
+							"defineInPreview": true
+						},
+						{
+							"propertyName": "rangedweapons",
+							"label": "Ranged Weapon",
+							"type": "list",
+							"hideDuplicateButton": true,
+							"dataSource": "rangedweapons",
+							"limit": 2,
+							"statsTableDirection": "horizontal",
+							"stats": [
+                                {
+                                    "name": "Glory Points",
+                                    "propertyName": "glorypoints"
+                                },
+								{
+									"name": "Type",
+									"propertyName": "type"
+								},
+								{
+									"name": "Range",
+									"propertyName": "range"
+								},
+								{
+									"name": "Modifiers",
+									"propertyName": "modifiers"
+								}
+                            ],
+							"children": [
+								{
+									"propertyName": "keywords",
+									"label": "Keywords",
+									"type": "static"
+								}
+							]
+						},
+						{
+							"propertyName": "meleeweapons",
+							"label": "Melee Weapon",
+							"type": "list",
+							"dataSource": "meleeweapons",
+							"hideDuplicateButton": true,
+							"limit": 2,
+							"statsTableDirection": "horizontal",
+							"stats": [
+                                {
+                                    "name": "Glory Points",
+                                    "propertyName": "glorypoints"
+                                },
+								{
+									"name": "Type",
+									"propertyName": "type"
+								},
+								{
+									"name": "Range",
+									"propertyName": "range"
+								},
+								{
+									"name": "Modifiers",
+									"propertyName": "modifiers"
+								}
+                            ],
+							"children": [
+								{
+									"propertyName": "keywords",
+									"label": "Keywords",
+									"type": "static"
+								}
+							]
+						},
+						{
+							"propertyName": "armour",
+							"label": "Armour",
+							"type": "list",
+							"dataSource": "armour",
+							"hideDuplicateButton": true,
+							"limit": 1,
+							"stats": [
+                                {
+                                    "name": "Glory Points",
+                                    "propertyName": "glorypoints"
+                                }
+                            ]
+						},
+						{
+							"propertyName": "equipment",
+							"label": "Equipment",
+							"type": "list",
+							"dataSource": "equipment",
+							"hideDuplicateButton": true,
+							"stats": [
+                                {
+                                    "name": "Glory Points",
+                                    "propertyName": "glorypoints"
+                                }
+                            ]
+						}
+					]
+				}
+			]
+		}
+	],
+	"data": {
+		"armour": [
+			{
+				"name": "Standard Armour",
+				"points": 20,
+				"factions": ["Heretic Legion"],
+				"definition": "-1 to all Injury Chart rolls against the model. Can be combined with any shield."
+			},
+			{
+				"name": "Heavy Armour",
+				"points": 40,
+				"availableOn": ["Heretic Priest", "Heretic Death Commando", "Heretic Chorister"],
+				"definition": "Grants a -2 modifier to all injury rolls against the model wearing this armour."
+			},
+			{
+				"name": "Trench Shield",
+				"points": 15,
+				"factions": ["Heretic Legion"],
+				"definition": "Takes one hand to use in both melee and in ranged combat. Grants -1 to all injury rolls against the model. This bonus stacks with any armour the model wears, unless otherwise indicated."
+			}
+		],
+		"equipment": [
+			{
+				"name": "Gas Mask",
+				"points": 5,
+				"factions": ["Heretic Legion"],
+				"definition": "Models with Gas Masks ignore all damage from weapons and other sources that have the keyword GAS."
+			},
+			{
+				"name": "Unholy Trinket",
+				"points": 5,
+				"factions": ["Heretic Legion"],
+				"definition": "When a model fails in a RISKY ACTION, this does not end the Activation. Keyword: CONSUMABLE"
+			},
+			{
+				"name": "Combat Helmet",
+				"points": 5,
+				"factions": ["Heretic Legion"],
+				"definition": "Ignores additional BLOOD MARKERS caused by weapons with Keyword SHRAPNEL."
+			}
+		],
+		"meleeweapons": [
+			{
+				"name": "Trench Club",
+				"points": 4,
+				"factions": ["Heretic Legion"],
+				"type": "1-handed",
+				"range": "Melee",
+				"modifiers": "",
+				"keywords": []
+			},
+			{
+				"name": "Sword/Axe",
+				"points": 5,
+				"factions": ["Heretic Legion"],
+				"type": "1-handed",
+				"range": "Melee",
+				"modifiers": "",
+				"keywords": ["Critical"]
+			},
+			{
+				"name": "Trench Knife",
+				"points": 2,
+				"factions": ["Heretic Legion"],
+				"type": "1-handed",
+				"range": "Melee",
+				"modifiers": "-1D to Hit",
+				"keywords": [],
+				"definition": "Add -1 Dice every time you use a knife to see if the attack hits."
+			},
+			{
+				"name": "Bayonet",
+				"points": 3,
+				"factions": ["Heretic Legion"],
+				"type": "2-handed",
+				"range": "Melee",
+				"modifiers": "-1D to Hit",
+				"keywords": [],
+				"definition": "Bayonets can only be attached to a Rifle or Shotgun and does not count towards the maximum Melee weapons a model can carry. Requires two hands to use in Melee."
+			},
+			{
+				"name": "Polearm",
+				"points": 10,
+				"factions": ["Heretic Legion"],
+				"type": "2-handed",
+				"range": "Melee",
+				"modifiers": "-1D to hit for Charges",
+				"keywords": [],
+				"definition": "Polearms take two hands to use and the model armed with it cannot use any shield. Models equipped with a Trench Polearm give any charging opponent -1 DICE in Melee combat when rolling to hit. This only applies when a charging model attacks, not on subsequent rounds of Melee."
+			},
+			{
+				"name": "Great Axe",
+				"points": 17,
+				"factions": ["Heretic Legion"],
+				"type": "2-handed",
+				"range": "Melee",
+				"modifiers": "+1D to Injuries",
+				"keywords": ["Heavy", "Critical"],
+				"definition": "Rolls all injuries with +1 Dice"
+			},
+			{
+				"name": "Great Maul",
+				"points": 15,
+				"factions": ["Heretic Legion"]
+			},
+			{
+				"name": "Sacrificial Blade",
+				"points": 25,
+				"limit": 2,
+				"availableOn": ["Heretic Priest", "Heretic Death Commando", "Heretic Chorister"],
+				"type": "1-handed",
+				"range": "Melee",
+				"modifiers": "+2D on Injury results",
+				"keywords": ["Risky"],
+				"definition": "The Sacrificial Knife adds +2 Dice to all rolls on the Injury Chart"
+			}
+		],
+        "rangedweapons": [
+            {
+                "name": "Bolt Action Rifle",
+                "points": 10,
+                "factions": ["Heretic Legion"],
+				"type": "2-handed",
+				"range": "24\"",
+				"modifiers": "",
+				"keywords": []
+            },
+            {
+                "name": "Automatic Rifle",
+                "points": 0,
+                "glorypoints": 3,
+                "factions": ["Heretic Legion"],
+				"type": "2-handed",
+				"range": "24\"",
+				"modifiers": "",
+				"keywords": ["Assault"],
+				"definition": "A model armed with an Automatic Rifle can make two attack Actions instead of one. Both attacks must be against the same target."
+            }
+        ],
+		"factions": [
+
+			{
+			"name": "Heretic Legion",
+			"alignment": "Warbands",
+			"armyBonus": "\"", 
+			"additionalRules": ""
+			}	
+		],
+		"heroes": [
+			{
+				"name": "Heretic Priest",
+				"factions": [
+					{
+						"name": "Heretic Legion",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"points": 80,
+				"movement": 6,
+				"ranged": 2,
+				"melee": 2,
+				"armour": 0,
+				"base": 32,
+				"keywords": [
+					"Heretic",
+					"Elite"
+				],
+				"options": [
+				],
+				"abilities": ["Puppet Master", "Tough"]
+			},
+			{
+				"name": "Heretic Trooper",
+				"factions": [
+					{
+						"name": "Heretic Legion",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"points": 30,
+				"movement": 6,
+				"ranged": 0,
+				"melee": 0,
+				"armour": 0,
+				"base": 25,
+				"keywords": [
+					"Heretic"
+				],
+				"options": [
+					{
+						"name": "Upgrade Ranged",
+						"chooseOneKey": "a",
+						"points": 10
+					},
+					{
+						"name": "Upgrade Melee",
+						"chooseOneKey": "a",
+						"points": 10
+					}
+				],
+				"abilities": []
+			}
+		],
+		"abilities": [
+            {
+                "name": "Puppet Master",
+                "definition": "Select a target model, friend or foe, within 12\". As an Action you can move the model D6\" in any direction, including forcing it to fall down or enter into melee combat with any enemy model."
+            },
+            {
+                "name": "Tough",
+                "definition": "Demonic vitality makes the Heretic Priests very difficult to slay. They are subject to the rules for TOUGH creatures."
+            }
+		]		
+	}
+}
