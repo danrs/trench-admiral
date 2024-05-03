@@ -184,12 +184,46 @@
 							]
 						},
 						{
+							"propertyName": "grenades",
+							"label": "Grenade",
+							"type": "list",
+							"hideDuplicateButton": true,
+							"dataSource": "grenades",
+							"limit": 1,
+							"statsTableDirection": "horizontal",
+							"stats": [
+                                {
+                                    "name": "Glory Points",
+                                    "propertyName": "glorypoints"
+                                },
+								{
+									"name": "Type",
+									"propertyName": "type"
+								},
+								{
+									"name": "Range",
+									"propertyName": "range"
+								},
+								{
+									"name": "Modifiers",
+									"propertyName": "modifiers"
+								}
+                            ],
+							"children": [
+								{
+									"propertyName": "keywords",
+									"label": "Keywords",
+									"type": "static"
+								}
+							]
+						},
+						{
 							"propertyName": "armour",
 							"label": "Armour",
 							"type": "list",
 							"dataSource": "armour",
 							"hideDuplicateButton": true,
-							"limit": 1,
+							"limit": 2,
 							"stats": [
                                 {
                                     "name": "Glory Points",
@@ -354,6 +388,58 @@
 				"definition": "A model armed with an Automatic Rifle can make two attack Actions instead of one. Both attacks must be against the same target."
             }
         ],
+        "grenades": [
+            {
+                "name": "Grenade",
+                "points": 10,
+                "factions": ["Heretic Legion"],
+				"type": "grenade",
+				"range": "8\"",
+				"modifiers": "",
+				"keywords": ["Assault", "Shrapnel"],
+				"definition": "Grenades have a blast radius of 2\" - all models within the blast radius are hit."
+            },
+            {
+                "name": "Molotov Cocktail",
+                "points": 10,
+                "factions": ["Trench Pilgrim"],
+				"type": "grenade",
+				"range": "6\"",
+				"modifiers": "-1D Injury",
+				"keywords": ["Assault", "Fire"],
+				"definition": "-1 DICE on injury rolls. Incindiary Grenades ignore all penalties for terrain/cover, as well as ignoring armour on a critical attack roll."
+            },
+            {
+                "name": "Incindiary Grenade",
+                "points": 10,
+                "factions": ["Heretic Legion"],
+				"type": "grenade",
+				"range": "8\"",
+				"modifiers": "",
+				"keywords": ["Assault", "Fire"],
+				"definition": "Incindiary Grenades ignore all penalties for terrain/cover."
+            },
+            {
+                "name": "Gas Grenade",
+                "points": 10,
+                "factions": ["Heretic Legion"],
+				"type": "grenade",
+				"range": "8\"",
+				"modifiers": "-1D Injury",
+				"keywords": ["Assault", "Gas"],
+				"definition": "Gas Grenades ignore all penalties for cover and armour but roll injuries with -1 DICE. Gas Grenades hit all targets within 3\" of a target they hit."
+            },
+            {
+                "name": "Parasite Grenade",
+                "points": 15,
+                "factions": ["Black Grail"],
+				"type": "grenade",
+				"range": "8\"",
+				"modifiers": "",
+				"keywords": ["Assault"],
+				"definition": "If a Parasite Grenade hits a model, the Black Grail player can move this model up 3” into any direction they wish. This can be used to move the model out of cover, to fall from a high position, or even into Melee with their enemies. This additional effect does not work on models with the Keyword FEAR."
+            }
+        ],
 		"factions": [
 
 			{
@@ -385,6 +471,28 @@
 				"options": [
 				],
 				"abilities": ["Puppet Master", "Tough"]
+			},
+			{
+				"name": "Heretic Death COmmando",
+				"factions": [
+					{
+						"name": "Heretic Legion",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"points": 90,
+				"movement": 6,
+				"ranged": 1,
+				"melee": 2,
+				"armour": 0,
+				"base": 32,
+				"keywords": [
+					"Heretic",
+					"Elite"
+				],
+				"options": [
+				],
+				"abilities": ["Hide", "Infiltrator", "Stealth Generator"]
 			},
 			{
 				"name": "Heretic Trooper",
@@ -424,9 +532,21 @@
                 "definition": "Select a target model, friend or foe, within 12\". As an Action you can move the model D6\" in any direction, including forcing it to fall down or enter into melee combat with any enemy model."
             },
             {
+                "name": "Hide",
+                "definition": "As a RISKY ACTION the Commando can hide if any piece of scenery the model is touching can block line of sight to any direction, even partially. If successful, enemies cannot charge or target the Commando with a ranged attack, though blast radius weapons can still hit them if aimed at a different target and the Commando is within the blast radius. If after hiding the Death Commando moves in any way, charges or shoots, this effect is cancelled and the enemies can target the Commando as standard."
+            },
+            {
+                "name": "Stealth Generator",
+                "definition": "Ranged attacks against a Death Commando suffer-1 DICE to all the attack rolls."
+            },
+            {
+                "name": "Infiltrator",
+                "definition": "Models with this Keyword can be placed anywhere on the table out of line of sight of any enemies, but at least 8” away from the closest enemy. Deployed after any model without this keyword."
+            },
+            {
                 "name": "Tough",
-                "definition": "Demonic vitality makes the Heretic Priests very difficult to slay. They are subject to the rules for TOUGH creatures."
+                "definition": "Tough creatures treat Out of Action results as Down instead. Once a TOUGH Creature is Down it is treated as any other model when rolling on the Injury Chart and can be taken Out of Action. Once a TOUGH creature suffers an Out of Action result and avoids it due to the TOUGH rule, it can be taken out exactly as any other model."
             }
-		]		
+		]
 	}
 }
