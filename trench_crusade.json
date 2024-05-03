@@ -470,10 +470,10 @@
 				],
 				"options": [
 				],
-				"abilities": ["Puppet Master", "Tough"]
+				"abilities": ["PUPPET MASTER", "TOUGH"]
 			},
 			{
-				"name": "Heretic Death COmmando",
+				"name": "Heretic Death Commando",
 				"factions": [
 					{
 						"name": "Heretic Legion",
@@ -492,7 +492,7 @@
 				],
 				"options": [
 				],
-				"abilities": ["Hide", "Infiltrator", "Stealth Generator"]
+				"abilities": ["HIDE", "INFILTRATOR", "STEALTH GENERATOR"]
 			},
 			{
 				"name": "Heretic Trooper",
@@ -528,23 +528,23 @@
 		],
 		"abilities": [
             {
-                "name": "Puppet Master",
+                "name": "PUPPET MASTER",
                 "definition": "Select a target model, friend or foe, within 12\". As an Action you can move the model D6\" in any direction, including forcing it to fall down or enter into melee combat with any enemy model."
             },
             {
-                "name": "Hide",
+                "name": "HIDE",
                 "definition": "As a RISKY ACTION the Commando can hide if any piece of scenery the model is touching can block line of sight to any direction, even partially. If successful, enemies cannot charge or target the Commando with a ranged attack, though blast radius weapons can still hit them if aimed at a different target and the Commando is within the blast radius. If after hiding the Death Commando moves in any way, charges or shoots, this effect is cancelled and the enemies can target the Commando as standard."
             },
             {
-                "name": "Stealth Generator",
+                "name": "STEALTH GENERATOR",
                 "definition": "Ranged attacks against a Death Commando suffer-1 DICE to all the attack rolls."
             },
             {
-                "name": "Infiltrator",
+                "name": "INFILTRATOR",
                 "definition": "Models with this Keyword can be placed anywhere on the table out of line of sight of any enemies, but at least 8” away from the closest enemy. Deployed after any model without this keyword."
             },
             {
-                "name": "Tough",
+                "name": "TOUGH",
                 "definition": "Tough creatures treat Out of Action results as Down instead. Once a TOUGH Creature is Down it is treated as any other model when rolling on the Injury Chart and can be taken Out of Action. Once a TOUGH creature suffers an Out of Action result and avoids it due to the TOUGH rule, it can be taken out exactly as any other model."
             }
 		]
