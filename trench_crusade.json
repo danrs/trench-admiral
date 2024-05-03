@@ -492,7 +492,7 @@
 				],
 				"options": [
 				],
-				"abilities": ["HIDE", "INFILTRATOR", "STEALTH GENERATOR"]
+				"abilities": ["HIDE", "INFILTRATOR", "STEALTH"]
 			},
 			{
 				"name": "Heretic Trooper",
@@ -528,20 +528,76 @@
 		],
 		"abilities": [
             {
-                "name": "PUPPET MASTER",
-                "definition": "Select a target model, friend or foe, within 12\". As an Action you can move the model D6\" in any direction, including forcing it to fall down or enter into melee combat with any enemy model."
+                "name": "ASSAULT",
+                "definition": "Weapons with this Keyword can make a ranged attack and charge during the same Activation. Only one such attack can be done in this instance, regardless of any rules the ranged weapon may have."
+            },
+            {
+                "name": "CONSUMABLE",
+                "definition": "An item with this keyword can only be used once per battle and it is then gone."
+            },
+            {
+                "name": "CRITICAL",
+                "definition": "When attacking with a weapon with this keyword, add +1 DICE to any injury rolls the weapon causes if you roll a Critical (i.e. 12+) on the Action Success Chart."
+            },
+            {
+                "name": "ELITE",
+                "definition": "The most senior and heroic models of the warband. They have different rules for experience and advancement, and often enjoy a different weapon, armour and equipment selection."
+            },
+            {
+                "name": "FEAR",
+                "definition": "Enemies of models with this Keyword suffer -1 DICE in Melee combat against this model. Some units are immune to this effect. Models that cause FEAR are not affected by FEAR themselves."
+            },
+            {
+                "name": "FIRE",
+                "definition": "Damage by this weapon is due to fire. This weapon causes an extra +1 BLOOD MARKER when it hits enemies, even if the damage is otherwise negated by armour or other circumstances."
+            },
+            {
+                "name": "FIRETEAM",
+                "definition": "This model is part of a Fireteam. All models that are part of the same Fireteam can be activated at the same time without your opponent getting their turn in between. They can take their ACTIONS in any order between them as they wish. Note that if either member of the Fireteam fails in a RISKY ACTION, it ends both Activations."
+            },
+            {
+                "name": "GAS",
+                "definition": "These weapons damage lungs so they cause an extra +1 BLOOD MARKER due to toxic fumes, even if the damage is otherwise negated by armour. Some equipment specifically protects against this type of damage. Troops equipped with Gas Masks will be immune to such weapons and will suffer no damage from them under any circumstances."
+            },
+            {
+                "name": "GRENADE",
+                "definition": "Grenade-type weapons ignore penalties for cover and long range. They do not count towards the number of missile weapons a model can carry and do not have to be held in your hand at all times. A model armed with grenades can use them as many times as they wish."
+            },
+            {
+                "name": "HEAVY",
+                "definition": "f carrying a weapon, armour or equipment with this Keyword, the model cannot move/dash and shoot during its Activation, and the model cannot roll D6 and add it to the Charge move. Only one such item can be carried by a single model."
             },
             {
                 "name": "HIDE",
-                "definition": "As a RISKY ACTION the Commando can hide if any piece of scenery the model is touching can block line of sight to any direction, even partially. If successful, enemies cannot charge or target the Commando with a ranged attack, though blast radius weapons can still hit them if aimed at a different target and the Commando is within the blast radius. If after hiding the Death Commando moves in any way, charges or shoots, this effect is cancelled and the enemies can target the Commando as standard."
-            },
-            {
-                "name": "STEALTH GENERATOR",
-                "definition": "Ranged attacks against a Death Commando suffer-1 DICE to all the attack rolls."
+                "definition": "As a RISKY ACTION the model can hide if any piece of scenery the model is touching can block line of sight to any direction, even partially. If successful, enemies cannot charge or target the model with a ranged attack, though blast radius weapons can still hit them if aimed at a different target and the model is within the blast radius. If after hiding the model moves in any way, charges or shoots, this effect is cancelled and the enemies can target the model as standard."
             },
             {
                 "name": "INFILTRATOR",
                 "definition": "Models with this Keyword can be placed anywhere on the table out of line of sight of any enemies, but at least 8” away from the closest enemy. Deployed after any model without this keyword."
+            },
+            {
+                "name": "PUPPET MASTER",
+                "definition": "Select a target model within 12” of the Priest, friend or foe (including the Priest). As a RISKY ACTION you can move the model D6” in any direction, including forcing it to fall down or enter into melee combat with any enemy model, or leave Combat (all the usual rules apply)."
+            },
+            {
+                "name": "RISKY",
+                "definition": "If you fail your roll on the Action Success Chart when taking this ACTION, the Activation of this model ends immediately."
+            },
+            {
+                "name": "SHRAPNEL",
+                "definition": "These weapons cause damage via an explosion of shrapnel, so they always cause an extra +1 BLOOD MARKER due to fragments hitting the target, even if the damage is otherwise negated by armour or other means. Wearing a helmet negates this extra marker."
+            },
+            {
+                "name": "SKIRMISHER",
+                "definition": "Unless engaged in melee, before an enemy makes a charge against a SKIRMISHER, you can immediately move D3” in any direction you wish (except within 1” of any enemy). After this manoeuvre, the charging model is moved as normal. This may lead to the charger being unable to enter Melee."
+            },
+            {
+                "name": "STEALTH",
+                "definition": "Enemy ranged attacks suffer -1 DICE against this target."
+            },
+            {
+                "name": "STRONG",
+                "definition": "A model with this Keyword ignores the rules for weapons/armour/equipment with the Keyword HEAVY. A model with the Keyword STRONG may wield a two-handed melee weapon in one hand. In addition, STRONG models can carry one HEAVY Melee weapon and one HEAVY ranged weapon."
             },
             {
                 "name": "TOUGH",
